@@ -2,7 +2,6 @@ import "./App.css";
 import BackgroundSlider from "react-background-slider";
 import { useState } from "react";
 import { useEffect } from "react";
-import { copy } from "fs-extra";
 
 function App() {
   const [images, setImages] = useState([])
