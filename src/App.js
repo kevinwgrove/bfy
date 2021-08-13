@@ -27,14 +27,14 @@ function App() {
         }
       }
       setImages(copy)
-  }, [images])
+  }, [null])
 
   return (
     <>
         <BackgroundSlider 
           id="background"
           images={images}
-          duration={2}
+          duration={8}
           transition={2}
         />
           <div id="app-container"></div>
