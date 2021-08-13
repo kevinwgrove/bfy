@@ -1,9 +1,5 @@
 #background {
-  height: 100vh;
-  background-position: 0 40%;
-  background-size: 100vw;
-  background-color: #282c34;
-  transition-duration: 2s;
+  background-color: #282c34 !important;
 }
 
 #app-container {
