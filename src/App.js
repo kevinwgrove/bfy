@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { 
+  Fade } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [num, setNum] = useState(12)
+
+  const imgUrls = new XMLHttpRequest();
+  imgUrls.open("GET", "/images", true);
+  imgUrls.responseType = "document";
+
+  useEffect(() => {
+    const getRandomNum = () => {
+      let newNum = Math.floor(Math.random() * (17 - 1) + 1)
+      if (num === newNum){
+        getRandomNum()
+      } else {
+        setNum(newNum)
+      }
+    };
+    setInterval(() => getRandomNum(), 10000)
+  }, [])
+  
+  
+  let img_num = `url(images/img-${num}.jpeg)`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {num === 11 ? (
+        <div
+          id="background"
+          style={{
+            backgroundImage: img_num,
+            backgroundPosition: "0 5%",
+          }}
+        ></div>
+      ) : (
+          <div
+            id="background"
+            style={{
+              backgroundImage: img_num,
+            }}
+          ></div>
+      )}
+      <div id="app-container"></div>
+    </>
   );
 }
 
