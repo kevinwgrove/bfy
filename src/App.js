@@ -1,8 +1,8 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 function App() {
-  const [num, setNum] = useState(12)
+  // const [num, setNum] = useState(12)
 
   const imgUrls = new XMLHttpRequest();
   imgUrls.open("GET", "/images", true);
@@ -21,7 +21,7 @@ function App() {
   // })
   
   
-  let img_num = `url(images/img-${num}.jpeg)`;
+  // let img_num = `url(images/img-${num}.jpeg)`;
 
   return (
     <>
