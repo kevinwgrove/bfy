@@ -8,28 +8,28 @@ function App() {
   for (let i = 1; images.length < 16; i++) {
     images.push(`images/img-${i}.jpeg`)
   }
+  const shuffle = () => {
+    var copy = [], n = images.length, i;
 
-  useEffect(() => {
-      const shuffle = () => {
-        var copy = [], n = images.length, i;
+    // While there remain elements to shuffle…
+    while (n) {
 
-        // While there remain elements to shuffle…
-        while (n) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * images.length);
 
-          // Pick a remaining element…
-          i = Math.floor(Math.random() * images.length);
-
-          // If not already shuffled, move it to the new images.
-          if (i in images) {
-            copy.push(images[i]);
-            delete images[i];
-            n--;
-          }
-        }
-        setImages(copy)
+      // If not already shuffled, move it to the new images.
+      if (i in images) {
+        copy.push(images[i]);
+        delete images[i];
+        n--;
       }
-      shuffle()
-  }, [null])
+    }
+    return copy
+  }
+  useEffect(() => {
+    setImages(shuffle())
+  }, [])
+
 
   return (
     <>
