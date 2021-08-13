@@ -10,24 +10,26 @@ function App() {
       for (let i = 1; images.length < 16; i++) {
         images.push(`images/img-${i}.jpeg`)
       }
-      
-      var copy = [], n = images.length, i;
+      const shuffle = () => {
+        var copy = [], n = images.length, i;
 
-      // While there remain elements to shuffle…
-      while (n) {
+        // While there remain elements to shuffle…
+        while (n) {
 
-        // Pick a remaining element…
-        i = Math.floor(Math.random() * images.length);
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * images.length);
 
-        // If not already shuffled, move it to the new images.
-        if (i in images) {
-          copy.push(images[i]);
-          delete images[i];
-          n--;
+          // If not already shuffled, move it to the new images.
+          if (i in images) {
+            copy.push(images[i]);
+            delete images[i];
+            n--;
+          }
         }
+        setImages(copy)
       }
-      setImages(copy)
-  }, [null])
+      shuffle()
+  }, [])
 
   return (
     <>
