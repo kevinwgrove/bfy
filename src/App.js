@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      {num === 11 ? (
+      {/* {num === 11 ? ( */}
         <div
           id="background"
           style={{
@@ -33,14 +33,14 @@ function App() {
             backgroundPosition: "0 5%",
           }}
         ></div>
-      ) : (
+      {/* ) : (
           <div
             id="background"
             style={{
               backgroundImage: img_num,
             }}
           ></div>
-      )}
+      )} */}
       <div id="app-container"></div>
     </>
   );
