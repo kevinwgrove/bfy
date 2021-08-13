@@ -28,7 +28,7 @@ function App() {
         }
       }
       setImages(copy)
-  }, [''])
+  }, [images])
 
   return (
     <>
