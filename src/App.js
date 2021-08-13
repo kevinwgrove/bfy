@@ -18,7 +18,7 @@ function App() {
       }
     };
     setInterval(() => getRandomNum(), 10000)
-  }, [])
+  }, [num])
   
   
   let img_num = `url(images/img-${num}.jpeg)`;
