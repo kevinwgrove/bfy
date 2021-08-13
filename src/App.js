@@ -5,11 +5,11 @@ import { useEffect } from "react";
 
 function App() {
   const [images, setImages] = useState([])
+  for (let i = 1; images.length < 16; i++) {
+    images.push(`images/img-${i}.jpeg`)
+  }
 
   useEffect(() => {
-      for (let i = 1; images.length < 16; i++) {
-        images.push(`images/img-${i}.jpeg`)
-      }
       const shuffle = () => {
         var copy = [], n = images.length, i;
 
