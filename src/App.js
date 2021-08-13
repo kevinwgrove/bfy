@@ -8,17 +8,17 @@ function App() {
   imgUrls.open("GET", "/images", true);
   imgUrls.responseType = "document";
 
-  useEffect(() => {
-    const getRandomNum = () => {
-      let newNum = Math.floor(Math.random() * (17 - 1) + 1)
-      if (num === newNum){
-        getRandomNum()
-      } else {
-        setNum(newNum)
-      }
-    };
-    setInterval(() => getRandomNum(), 10000)
-  })
+  // useEffect(() => {
+  //   const getRandomNum = () => {
+  //     let newNum = Math.floor(Math.random() * (17 - 1) + 1)
+  //     if (num === newNum){
+  //       getRandomNum()
+  //     } else {
+  //       setNum(newNum)
+  //     }
+  //   };
+  //   setInterval(() => getRandomNum(), 10000)
+  // })
   
   
   let img_num = `url(images/img-${num}.jpeg)`;
@@ -29,7 +29,7 @@ function App() {
         <div
           id="background"
           style={{
-            backgroundImage: img_num,
+            backgroundImage: `url(images/img-12.jpeg)`,
             backgroundPosition: "0 5%",
           }}
         ></div>
