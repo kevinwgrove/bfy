@@ -1,6 +1,4 @@
 import "./App.css";
-import { 
-  Fade } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
 function App() {
