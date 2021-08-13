@@ -29,7 +29,7 @@ function App() {
         setImages(copy)
       }
       shuffle()
-  }, [])
+  }, [null])
 
   return (
     <>
