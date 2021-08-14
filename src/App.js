@@ -21,32 +21,40 @@ function App() {
           <source src="videos/northern_soul.mp4" type="video/mp4" />
         </video>
       </div>
-      <div
-        id="sound-button-container"
+      <div 
+        id="overlay-wrapper"
       >
-        {
-          muted
-          ?
-          <IconButton
-            onClick={toggleSound}
-          >
-            <VolumeOff 
-              style={{
-                color: 'white'
-              }}
-            />
-          </IconButton>
-          :
-          <IconButton
-            onClick={toggleSound}
-          >
-            <VolumeUp 
-              style={{
-                color: 'white'
-              }}
-            />
-          </IconButton>
-        }
+        <div
+          id="menu-bar"
+        >
+        </div>
+        <div
+          id="sound-button-container"
+        >
+          {
+            muted
+            ?
+            <IconButton
+              onClick={toggleSound}
+            >
+              <VolumeOff 
+                style={{
+                  color: 'white'
+                }}
+              />
+            </IconButton>
+            :
+            <IconButton
+              onClick={toggleSound}
+            >
+              <VolumeUp 
+                style={{
+                  color: 'white'
+                }}
+              />
+            </IconButton>
+          }
+        </div>
       </div>
     </>
   );
