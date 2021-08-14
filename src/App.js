@@ -1,5 +1,4 @@
 import "./App.css";
-import "react-bootstrap";
 import {
   IconButton
 } from "@material-ui/core"
@@ -18,7 +17,7 @@ function App() {
   return (
     <>
       <div id="video-wrapper">
-        <video id="video" preload autoPlay poster loop muted>
+        <video preload autoPlay poster loop muted id="video">
           <source src="videos/northern_soul.mp4" type="video/mp4" />
         </video>
       </div>
