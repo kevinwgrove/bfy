@@ -19,7 +19,7 @@ function App() {
     <>
       <div id="video-wrapper">
         <video id="video" preload autoPlay poster loop muted>
-          <source src="videos/northern_soul_lq.mp4" type="video/mp4" />
+          <source src="videos/northern_soul.mp4" type="video/mp4" />
         </video>
       </div>
       <div 
