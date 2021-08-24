@@ -124,8 +124,17 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: auto;
 }
 
 #plugin-container {
   margin: 40px 0 0 0;
+}
+
+#schedule-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 800px;
 }

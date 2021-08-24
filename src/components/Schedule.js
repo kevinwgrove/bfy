@@ -4,9 +4,12 @@ import { Typography } from "@material-ui/core";
 export const Schedule = () => {
   return (
     <>
+      
       <Typography
         className="text font-bungee overlay-element"
+        align="center"
         style={{
+          fontWeight: "400",
           fontSize: "50px",
         }}
       >
