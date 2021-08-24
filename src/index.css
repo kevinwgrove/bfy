@@ -7,6 +7,86 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Aclonica";
+  src: local("Aclonica"),
+    url(./fonts/Aclonica/Aclonica-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Alumni_Sans";
+  src: local("Alumni_Sans"),
+    url(./fonts/Alumni_Sans/AlumniSans-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bungee";
+  src: local("Bungee"),
+    url(./fonts/Bungee/Bungee-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Cutive_Mono";
+  src: local("Cutive_Mono"),
+    url(./fonts/Cutive_Mono/CutiveMono-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Monoton";
+  src: local("Monoton"),
+    url(./fonts/Monoton/Monoton-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto_Mono";
+  src: local("Roboto_Mono"),
+    url(./fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Trocchi";
+  src: local("Trocchi"),
+    url(./fonts/Trocchi/Trocchi-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Ultra";
+  src: local("Ultra"),
+    url(./fonts/Ultra/Ultra-Regular.ttf) format("truetype");
+}
+
+.font-aclonica {
+  font-family: "Aclonica" !important;
+}
+
+.font-alumni {
+  font-family: "Alumni_Sans" !important;
+}
+
+.font-bungee {
+  font-family: "Bungee" !important;
+}
+
+.font-cutive {
+  font-family: "Cutive_Mono" !important;
+}
+
+.font-monoton {
+  font-family: "Monoton" !important;
+}
+
+.font-roboto {
+  font-family: "Roboto_Mono" !important;
+}
+
+.font-trocchi {
+  font-family: "Trocchi" !important;
+}
+
+.font-ultra {
+  font-family: "Ultra" !important;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
