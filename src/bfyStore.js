@@ -1,7 +1,7 @@
-// import { isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 export const createBfyStore = () => {
   return {
-    mobileDevice: false,
+    mobileDevice: isMobile,
   };
 };
