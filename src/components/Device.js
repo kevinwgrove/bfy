@@ -33,14 +33,14 @@ export const Device = () => {
         target.style.opacity -= 0.01;
       } else {
         clearInterval(fadeEffect);
-        target.style.visibility = "hidden"
+        target.style.visibility = "hidden";
       }
     }, 35);
   };
 
   setTimeout(() => {
-    fadeOutEffect()
-  }, 2000)
+    fadeOutEffect();
+  }, 1700);
 
   return (
     <>
@@ -53,11 +53,11 @@ export const Device = () => {
           fadeOutOnScroll();
         }}
       >
-        <img
-          id="video-overlay-logo"
-          src="/logos/circle_white.png"
-          alt="Bigfoot Yancey circle logo"
-        />
+          <img
+            id="video-overlay-logo"
+            src="/logos/circle_white.png"
+            alt="Bigfoot Yancey circle logo"
+          />
         <Controls />
         <div id="content-container">
           <Content />
