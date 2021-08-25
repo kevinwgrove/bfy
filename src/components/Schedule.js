@@ -4,38 +4,33 @@ import { Typography } from "@material-ui/core";
 export const Schedule = () => {
   return (
     <>
-      
       <Typography
         className="text font-bungee overlay-element"
         align="center"
         style={{
           fontWeight: "400",
-          fontSize: "50px",
+          fontSize: "60px",
         }}
       >
         Upcoming Shows
       </Typography>
 
-      <div id="plugin-container" className="overlay-element">
-        <div
-          className="fb-page"
-          data-href="https://www.facebook.com/BigfootYanceyMusic/events/?ref=page_internal"
-          data-tabs="events"
-          data-width="500"
-          // data-height=""
-          data-adapt-container-width="true"
-          data-hide-cover="false"
-          data-show-facepile="true"
-        >
-          <blockquote
-            cite="https://www.facebook.com/BigfootYanceyMusic/events/?ref=page_internal"
-            className="fb-xfbml-parse-ignore"
-          >
-            <a href="https://www.facebook.com/BigfootYanceyMusic/events/?ref=page_internal">
-              Bigfoot Yancey
-            </a>
-          </blockquote>
-        </div>
+      <div id="plugin-container">
+        <iframe
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBigfootYanceyMusic%2F&tabs=events&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+          width="500"
+          height="600"
+          style={{
+            border: "none",
+            overflow: "hidden",
+          }}
+          title="Bigfoot Yancey FB Widget"
+          scrolling="no"
+          frameborder="0"
+          allowfullscreen="true"
+          adapt-container-width="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
       </div>
     </>
   );

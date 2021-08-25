@@ -23,6 +23,25 @@ export const Device = () => {
     }
   };
 
+  const fadeOutEffect = () => {
+    const target = document.getElementById("video-overlay-logo");
+    const fadeEffect = setInterval(() => {
+      if (!target.style.opacity) {
+        target.style.opacity = 1;
+      }
+      if (target.style.opacity > 0) {
+        target.style.opacity -= 0.01;
+      } else {
+        clearInterval(fadeEffect);
+        target.style.visibility = "hidden"
+      }
+    }, 35);
+  };
+
+  setTimeout(() => {
+    fadeOutEffect()
+  }, 2000)
+
   return (
     <>
       <Video />
@@ -34,6 +53,11 @@ export const Device = () => {
           fadeOutOnScroll();
         }}
       >
+        <img
+          id="video-overlay-logo"
+          src="/logos/circle_white.png"
+          alt="Bigfoot Yancey circle logo"
+        />
         <Controls />
         <div id="content-container">
           <Content />
