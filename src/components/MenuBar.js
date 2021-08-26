@@ -1,8 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 
 export const MenuBar = () => {
+  const [elementOneTop, setElementOneTop] = useState(0)
+  const [elementTwoTop, setElementTwoTop] = useState(0)
+
+  useEffect(() => {
+    window.onload = () => {
+      const elOne = document.getElementById('merch-container')
+      const elTwo = document.getElementById('schedule-container')
+      const elOneTop = Math.round(elOne.offsetTop)
+      const elTwoTop = Math.round(elTwo.offsetTop)
+      setElementOneTop(elOneTop)
+      setElementTwoTop(elTwoTop)
+    }
+    window.addEventListener("resize", () => {
+      const elOne = document.getElementById('merch-container')
+      const elTwo = document.getElementById('schedule-container')
+      const elOneTop = Math.round(elOne.offsetTop)
+      const elTwoTop = Math.round(elTwo.offsetTop)
+      setElementOneTop(elOneTop)
+      setElementTwoTop(elTwoTop)
+    })
+    window.removeEventListener("resize", () => {
+      const elOne = document.getElementById('merch-container')
+      const elTwo = document.getElementById('schedule-container')
+      const elOneTop = Math.round(elOne.offsetTop)
+      const elTwoTop = Math.round(elTwo.offsetTop)
+      setElementOneTop(elOneTop)
+      setElementTwoTop(elTwoTop)
+    })
+  })
+
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -18,17 +48,26 @@ export const MenuBar = () => {
     window.location.href = link;
   };
 
-  const handleScroll = (id) => {
-    let element = document.getElementById(id);
-    if (id === "merch-container") {
-      element.scrollIntoView(false);
+  const handleScroll = (id, elementOneTop, elementTwoTop) => {
+    const offSet = 110;
+    const overlay = document.getElementById('overlay-wrapper')
+    const scrollPosition1 = Math.round(elementOneTop - offSet);
+    const scrollPosition2 = Math.round(elementTwoTop - offSet);
+    if (id === 'merch-container') {
+      overlay.scrollTo({
+        top: scrollPosition1,
+        behavior: "smooth"
+      });
     } else {
-      element.scrollIntoView(true);
+      overlay.scrollTo({
+        top: scrollPosition2,
+        behavior: "smooth"
+      });
     }
   };
 
   return (
-    <div id="menu-bar">
+    <>
       <img
         src="logos/bigfoot_white.png"
         alt="Bigfoot Yancey logo - white"
@@ -42,6 +81,7 @@ export const MenuBar = () => {
           e.preventDefault();
           handleClick(e);
         }}
+        id="menu-button"
       >
         <MenuIcon
           style={{
@@ -60,7 +100,7 @@ export const MenuBar = () => {
         <MenuItem
           className="font-roboto"
           onClick={() => {
-            handleScroll("merch-container");
+            handleScroll("merch-container", elementOneTop, elementTwoTop);
             handleClose();
           }}
         >
@@ -69,7 +109,7 @@ export const MenuBar = () => {
         <MenuItem
           className="font-roboto"
           onClick={() => {
-            handleScroll("schedule-container");
+            handleScroll("schedule-container", elementOneTop, elementTwoTop);
             handleClose();
           }}
         >
@@ -85,6 +125,6 @@ export const MenuBar = () => {
           Contact
         </MenuItem>
       </Menu>
-    </div>
+    </>
   );
 };

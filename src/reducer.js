@@ -5,6 +5,16 @@ export const reducer = (state, action) => {
         ...state,
         mobileDevice: action.payload,
       };
+    case "elementOne":
+      return {
+        ...state,
+        elementOne: action.payload,
+      }
+    case "elementTwo":
+      return {
+        ...state,
+        elementTwo: action.payload
+      }
     default:
       return state;
   }

@@ -4,7 +4,8 @@ import { Video, Controls, MenuBar, Content } from "./index";
 export const Device = () => {
   const fadeOutOnScroll = () => {
     const elements = document.querySelectorAll(".overlay-element");
-    const menuBarHeight = document.getElementById("menu-bar").offsetHeight;
+    const menuBarHeight = document.getElementById("menu-bar-logo").offsetHeight;
+    
 
     for (let i = 0; i < elements.length; i++) {
       const elementHeight = elements[i].offsetHeight;
@@ -30,22 +31,21 @@ export const Device = () => {
         target.style.opacity = 1;
       }
       if (target.style.opacity > 0) {
-        target.style.opacity -= 0.01;
+        target.style.opacity -= 0.04;
       } else {
         clearInterval(fadeEffect);
         target.style.visibility = "hidden";
       }
-    }, 35);
+    }, 55);
   };
 
   setTimeout(() => {
     fadeOutEffect();
-  }, 1700);
+  }, 3000);
 
   return (
     <>
       <Video />
-
       <div
         id="overlay-wrapper"
         onScroll={(e) => {

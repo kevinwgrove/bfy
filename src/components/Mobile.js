@@ -4,7 +4,7 @@ import { Video, Controls, MenuBar, Content } from "./index";
 export const Mobile = () => {
   const fadeOutOnScroll = () => {
     const elements = document.querySelectorAll(".overlay-element");
-    const menuBarHeight = document.getElementById("menu-bar").offsetHeight;
+    const menuBarHeight = document.getElementById("menu-bar-logo").offsetHeight;
 
     for (let i = 0; i < elements.length; i++) {
       const elementHeight = elements[i].offsetHeight;
