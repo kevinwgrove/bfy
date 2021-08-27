@@ -41,7 +41,7 @@ export const Device = () => {
 
   setTimeout(() => {
     fadeOutEffect();
-  }, 3000);
+  }, 2500);
 
   return (
     <>

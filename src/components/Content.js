@@ -2,9 +2,6 @@ import React from "react";
 import { Merch, Schedule } from ".";
 
 export const Content = () => {
-  // const setScrollElements = () => {
-
-  // }
 
   return (
     <>
