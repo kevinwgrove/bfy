@@ -36,7 +36,7 @@ export const Device = () => {
         clearInterval(fadeEffect);
         target.style.visibility = "hidden";
       }
-    }, 55);
+    }, 50);
   };
 
   setTimeout(() => {
