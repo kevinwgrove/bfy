@@ -1,5 +1,6 @@
 import React from "react";
 import { useBfyStore } from "../BfyContext";
+require('dotenv').config();
 
 export const Video = () => {
   const bfyStore = useBfyStore();
@@ -15,7 +16,7 @@ export const Video = () => {
   ) : (
     <div id="video-wrapper">
       <video preload="true" autoPlay poster="true" loop muted id="video">
-        <source src="./videos/northern_soul.mp4" type="video/mp4" />
+        <source src={process.env.REACT_APP_S3_VIDEO_URL} type="video/mp4" />
       </video>
     </div>
   );
