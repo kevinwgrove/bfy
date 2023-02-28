@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import { useAnalyticsEventTracker } from "../useGoogleAnalytics";
 
 export const MenuBar = () => {
+  const gaEventTracker = useAnalyticsEventTracker('MenuBar');
   const [elementOneTop, setElementOneTop] = useState(0)
   const [elementTwoTop, setElementTwoTop] = useState(0)
 
@@ -36,6 +38,7 @@ export const MenuBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
+    gaEventTracker('Menu button clicked')
     setAnchorEl(event.currentTarget);
   };
 
@@ -44,11 +47,13 @@ export const MenuBar = () => {
   };
 
   const buildEmail = () => {
+    gaEventTracker('Email built')
     const link = "mailto:bigfootyancey@gmail.com";
     window.location.href = link;
   };
 
   const handleScroll = (id, elementOneTop, elementTwoTop) => {
+    gaEventTracker(`${id} selected`)
     const offSet = 110;
     const overlay = document.getElementById('overlay-wrapper')
     const scrollPosition1 = Math.round(elementOneTop - offSet);
