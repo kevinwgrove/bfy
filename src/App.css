@@ -135,8 +135,11 @@ video {
 }
 
 #plugin-container {
-  width: auto;
+  width: 100%;
   margin: 40px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #schedule-title {

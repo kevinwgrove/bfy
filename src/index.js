@@ -4,6 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BfyProvider } from "./BfyContext";
+import ReactGA from "react-ga4";
+require('dotenv').config();
+ReactGA.initialize([
+  {
+    trackingId: process.env.REACT_APP_MEASUREMENT_ID
+  }
+]);
 
 ReactDOM.render(
   <BfyProvider>

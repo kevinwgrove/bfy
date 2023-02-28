@@ -7,8 +7,10 @@ import {
 } from "@material-ui/icons";
 import { useBfyStore } from "../BfyContext";
 import { openNewWindow } from "../helpers";
+import { useAnalyticsEventTracker } from "../useGoogleAnalytics";
 
 export const Controls = () => {
+  const gaEventTracker = useAnalyticsEventTracker('Controls');
   const [muted, setMuted] = useState(true);
   const [top, setTop] = useState(window.innerHeight / 4);
   const [height, setHeight] = useState(window.innerHeight / 2);
@@ -29,6 +31,7 @@ export const Controls = () => {
   const toggleSound = () => {
     const element = document.getElementById("video");
     element.muted = !element.muted;
+    gaEventTracker(`Sound Toggled | sound on: ${!muted}`)
     setMuted(!muted);
   };
 
@@ -44,6 +47,7 @@ export const Controls = () => {
         <IconButton
           onClick={(e) => {
             e.preventDefault();
+            gaEventTracker(`Full Video (YouTube redirect) button click: mobile device`)
             openNewWindow(
               "https://www.youtube.com/watch?v=KhfhgWWnR60&t=1643s"
             );
@@ -82,6 +86,7 @@ export const Controls = () => {
           }}
           onClick={(e) => {
             e.preventDefault();
+            gaEventTracker(`Full Video (YouTube redirect) button click`)
             openNewWindow(
               "https://www.youtube.com/watch?v=KhfhgWWnR60&t=1643s"
             );

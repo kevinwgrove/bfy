@@ -1,8 +1,10 @@
 import React from "react";
 import { openNewWindow } from "../helpers";
 import { Button, Typography } from "@material-ui/core";
+import { useAnalyticsEventTracker } from "../useGoogleAnalytics";
 
 export const Merch = () => {
+  const gaEventTracker = useAnalyticsEventTracker('Merch');
   return (
     <>
       <Typography
@@ -20,6 +22,7 @@ export const Merch = () => {
           className="vinyl-button overlay-element"
           onClick={(e) => {
             e.preventDefault();
+            gaEventTracker('Hills Vinyl link click')
             openNewWindow(
               "https://www.squarecatvinylshop.com/product/bigfoot-yancey-hills-vinyl-/1730?cp=true&sa=false&sbp=false&q=true"
             );
@@ -38,6 +41,7 @@ export const Merch = () => {
           className="vinyl-button overlay-element"
           onClick={(e) => {
             e.preventDefault();
+            gaEventTracker('Early Years Vinyl link click')
             openNewWindow(
               "https://www.squarecatvinylshop.com/product/bigfoot-yancey-early-years-vinyl-/6056?cp=true&sa=false&sbp=false&q=true"
             );
