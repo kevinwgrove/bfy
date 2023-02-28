@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BfyProvider } from "./BfyContext";
 import ReactGA from "react-ga4";
 require('dotenv').config();
-console.log(process.env.REACT_APP_MEASUREMENT_ID)
 ReactGA.initialize([
   {
     trackingId: process.env.REACT_APP_MEASUREMENT_ID
